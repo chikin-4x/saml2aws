@@ -11,8 +11,8 @@ import (
 
 	"github.com/PuerkitoBio/goquery"
 	"github.com/stretchr/testify/require"
-	"github.com/versent/saml2aws/pkg/cfg"
-	"github.com/versent/saml2aws/pkg/creds"
+	"github.com/chikin-4x/saml2aws/pkg/cfg"
+	"github.com/chikin-4x/saml2aws/pkg/creds"
 )
 
 func TestClient_getLoginForm(t *testing.T) {

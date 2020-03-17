@@ -13,18 +13,18 @@ import (
 	"strings"
 	"time"
 
+	"github.com/chikin-4x/saml2aws/pkg/prompter"
 	"github.com/sirupsen/logrus"
-	"github.com/versent/saml2aws/pkg/prompter"
 
 	"encoding/json"
 
 	"github.com/PuerkitoBio/goquery"
+	"github.com/chikin-4x/saml2aws/pkg/cfg"
+	"github.com/chikin-4x/saml2aws/pkg/creds"
+	"github.com/chikin-4x/saml2aws/pkg/page"
+	"github.com/chikin-4x/saml2aws/pkg/provider"
 	"github.com/pkg/errors"
 	"github.com/tidwall/gjson"
-	"github.com/versent/saml2aws/pkg/cfg"
-	"github.com/versent/saml2aws/pkg/creds"
-	"github.com/versent/saml2aws/pkg/page"
-	"github.com/versent/saml2aws/pkg/provider"
 )
 
 const (
@@ -102,6 +102,8 @@ func (oc *Client) Authenticate(loginDetails *creds.LoginDetails) (string, error)
 
 	oktaOrgHost := oktaURL.Host
 
+	fmt.Printf("first")
+
 	//authenticate via okta api
 	authReq := AuthRequest{Username: loginDetails.Username, Password: loginDetails.Password}
 	if loginDetails.StateToken != "" {
@@ -114,7 +116,7 @@ func (oc *Client) Authenticate(loginDetails *creds.LoginDetails) (string, error)
 	}
 
 	authSubmitURL := fmt.Sprintf("https://%s/api/v1/authn", oktaOrgHost)
-
+	fmt.Printf("second")
 	req, err := http.NewRequest("POST", authSubmitURL, authBody)
 	if err != nil {
 		return "", errors.Wrap(err, "error building authentication request")

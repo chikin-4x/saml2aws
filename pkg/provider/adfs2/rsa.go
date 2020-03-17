@@ -10,9 +10,9 @@ import (
 
 	"github.com/PuerkitoBio/goquery"
 	"github.com/pkg/errors"
-	"github.com/versent/saml2aws/pkg/creds"
-	"github.com/versent/saml2aws/pkg/dump"
-	"github.com/versent/saml2aws/pkg/prompter"
+	"github.com/chikin-4x/saml2aws/pkg/creds"
+	"github.com/chikin-4x/saml2aws/pkg/dump"
+	"github.com/chikin-4x/saml2aws/pkg/prompter"
 )
 
 // Authenticate authenticate the user using the supplied login details

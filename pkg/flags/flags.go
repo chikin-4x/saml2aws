@@ -1,7 +1,7 @@
 package flags
 
 import (
-	"github.com/versent/saml2aws/pkg/cfg"
+	"github.com/chikin-4x/saml2aws/pkg/cfg"
 )
 
 // CommonFlags flags common to all of the `saml2aws` commands (except `help`)

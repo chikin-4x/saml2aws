@@ -5,9 +5,9 @@ import (
 	"sort"
 
 	"github.com/pkg/errors"
-	"github.com/versent/saml2aws/pkg/cfg"
-	"github.com/versent/saml2aws/pkg/creds"
-	"github.com/versent/saml2aws/pkg/prompter"
+	"github.com/chikin-4x/saml2aws/pkg/cfg"
+	"github.com/chikin-4x/saml2aws/pkg/creds"
+	"github.com/chikin-4x/saml2aws/pkg/prompter"
 )
 
 // PromptForConfigurationDetails prompt the user to present their hostname, username and mfa

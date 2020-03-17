@@ -16,10 +16,10 @@ import (
 	"github.com/google/uuid"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
-	"github.com/versent/saml2aws/pkg/cfg"
-	"github.com/versent/saml2aws/pkg/creds"
-	"github.com/versent/saml2aws/pkg/prompter"
-	"github.com/versent/saml2aws/pkg/provider"
+	"github.com/chikin-4x/saml2aws/pkg/cfg"
+	"github.com/chikin-4x/saml2aws/pkg/creds"
+	"github.com/chikin-4x/saml2aws/pkg/prompter"
+	"github.com/chikin-4x/saml2aws/pkg/provider"
 )
 
 const SAML_SUCCESS = "urn:oasis:names:tc:SAML:2.0:status:Success"

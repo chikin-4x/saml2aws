@@ -10,9 +10,9 @@ import (
 
 	"github.com/pkg/errors"
 	"github.com/skratchdot/open-golang/open"
-	"github.com/versent/saml2aws/pkg/awsconfig"
-	"github.com/versent/saml2aws/pkg/cfg"
-	"github.com/versent/saml2aws/pkg/flags"
+	"github.com/chikin-4x/saml2aws/pkg/awsconfig"
+	"github.com/chikin-4x/saml2aws/pkg/cfg"
+	"github.com/chikin-4x/saml2aws/pkg/flags"
 )
 
 const (

@@ -7,9 +7,9 @@ import (
 	"os"
 
 	"github.com/alecthomas/kingpin"
+	"github.com/chikin-4x/saml2aws/cmd/saml2aws/commands"
+	"github.com/chikin-4x/saml2aws/pkg/flags"
 	"github.com/sirupsen/logrus"
-	"github.com/versent/saml2aws/cmd/saml2aws/commands"
-	"github.com/versent/saml2aws/pkg/flags"
 )
 
 var (
@@ -47,7 +47,7 @@ func main() {
 	app.Version(Version)
 
 	// Settings not related to commands
-	verbose := app.Flag("verbose", "Enable verbose logging").Bool()
+	verbose := app.Flag("verbose", "Enable verbosity").Bool()
 	provider := app.Flag("provider", "This flag is obsolete. See: https://github.com/Versent/saml2aws#configuring-idp-accounts").Short('i').Enum("Akamai", "AzureAD", "ADFS", "ADFS2", "Ping", "JumpCloud", "Okta", "OneLogin", "PSU", "KeyCloak")
 
 	// Common (to all commands) settings

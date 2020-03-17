@@ -3,7 +3,7 @@ package credentials
 import (
 	"path"
 
-	"github.com/versent/saml2aws/pkg/creds"
+	"github.com/chikin-4x/saml2aws/pkg/creds"
 )
 
 // LookupCredentials lookup an existing set of credentials and validate it.

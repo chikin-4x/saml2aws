@@ -10,8 +10,8 @@ import (
 	"time"
 
 	"github.com/sirupsen/logrus"
-	"github.com/versent/saml2aws/pkg/cookiejar"
-	"github.com/versent/saml2aws/pkg/dump"
+	"github.com/chikin-4x/saml2aws/pkg/cookiejar"
+	"github.com/chikin-4x/saml2aws/pkg/dump"
 
 	"github.com/briandowns/spinner"
 	"github.com/mattn/go-isatty"
