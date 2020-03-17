@@ -102,8 +102,6 @@ func (oc *Client) Authenticate(loginDetails *creds.LoginDetails) (string, error)
 
 	oktaOrgHost := oktaURL.Host
 
-	fmt.Printf("first")
-
 	//authenticate via okta api
 	authReq := AuthRequest{Username: loginDetails.Username, Password: loginDetails.Password}
 	if loginDetails.StateToken != "" {
@@ -116,7 +114,6 @@ func (oc *Client) Authenticate(loginDetails *creds.LoginDetails) (string, error)
 	}
 
 	authSubmitURL := fmt.Sprintf("https://%s/api/v1/authn", oktaOrgHost)
-	fmt.Printf("second")
 	req, err := http.NewRequest("POST", authSubmitURL, authBody)
 	if err != nil {
 		return "", errors.Wrap(err, "error building authentication request")
