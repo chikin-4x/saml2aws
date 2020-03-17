@@ -8,14 +8,14 @@ import (
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/sts"
-	"github.com/pkg/errors"
-	"github.com/sirupsen/logrus"
 	"github.com/chikin-4x/saml2aws"
 	"github.com/chikin-4x/saml2aws/helper/credentials"
 	"github.com/chikin-4x/saml2aws/pkg/awsconfig"
 	"github.com/chikin-4x/saml2aws/pkg/cfg"
 	"github.com/chikin-4x/saml2aws/pkg/creds"
 	"github.com/chikin-4x/saml2aws/pkg/flags"
+	"github.com/pkg/errors"
+	"github.com/sirupsen/logrus"
 )
 
 // Login login to ADFS
@@ -68,6 +68,8 @@ func Login(loginFlags *flags.LoginExecFlags) error {
 	fmt.Printf("Authenticating as %s ...\n", loginDetails.Username)
 
 	samlAssertion, err := provider.Authenticate(loginDetails)
+
+	fmt.Printf("Authenticated")
 	if err != nil {
 		return errors.Wrap(err, "error authenticating to IdP")
 
