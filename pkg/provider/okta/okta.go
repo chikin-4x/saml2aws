@@ -133,6 +133,7 @@ func (oc *Client) Authenticate(loginDetails *creds.LoginDetails) (string, error)
 	}
 
 	resp := string(body)
+	fmt.Printf("resp")
 
 	authStatus := gjson.Get(resp, "status").String()
 	oktaSessionToken := gjson.Get(resp, "sessionToken").String()
@@ -146,17 +147,17 @@ func (oc *Client) Authenticate(loginDetails *creds.LoginDetails) (string, error)
 	}
 
 	//now call saml endpoint
-	// oktaSessionRedirectURL := fmt.Sprintf("https://%s/login/sessionCookieRedirect", oktaOrgHost)
+	oktaSessionRedirectURL := fmt.Sprintf("https://%s/login/sessionCookieRedirect", oktaOrgHost)
 
-	// req, err = http.NewRequest("GET", oktaSessionRedirectURL, nil)
-	// if err != nil {
-	// 	return "", errors.Wrap(err, "error building authentication request")
-	// }
-	// q := req.URL.Query()
-	// q.Add("checkAccountSetupComplete", "true")
-	// q.Add("token", oktaSessionToken)
-	// q.Add("redirectUrl", loginDetails.URL)
-	// req.URL.RawQuery = q.Encode()
+	req, err = http.NewRequest("GET", oktaSessionRedirectURL, nil)
+	if err != nil {
+		return "", errors.Wrap(err, "error building authentication request")
+	}
+	q := req.URL.Query()
+	q.Add("checkAccountSetupComplete", "true")
+	q.Add("token", oktaSessionToken)
+	q.Add("redirectUrl", loginDetails.URL)
+	req.URL.RawQuery = q.Encode()
 
 	ctx := context.WithValue(context.Background(), ctxKey("login"), loginDetails)
 	return oc.follow(ctx, req, loginDetails)
